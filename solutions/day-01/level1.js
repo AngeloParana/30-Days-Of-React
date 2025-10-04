@@ -98,7 +98,70 @@ function printITCompaniesAsSentence() {
     return sentence;
 };
 
+// 13 : Check if a certain company exists in the itCompanies array. If it exist return the company else return a company is not found
+function checkCompanyExists(company) {
+    let itCompanies = declareITCompaniesArray();   
+    if (itCompanies.includes(company)) {
+        return company;
+    } else {
+        return 'A company is not found';
+    }
+}  
+
+// 14 : Filter out companies which have more than one 'o' without the filter method
+function filterCompaniesWithMoreThanOneO() {
+    let itCompanies = declareITCompaniesArray();    
+    let itCompaniesWithoutO = []
+
+    for (company of itCompanies) {
+        let counter = 0;
+        for (char of company.split('')) {
+                if (char=='o'){
+                    counter = counter + 1
+                }
+        };
+
+        if (counter < 2) {
+            itCompaniesWithoutO.push(company)
+        }
+    }
+    return itCompaniesWithoutO
+
+    }
+
+// 15 : Sort the array using sort() method
+function sortArray() {
+    let itCompanies = declareITCompaniesArray(); 
+
+    return itCompanies.sort();
+
+}
+
+// 16 : Reverse the array using reverse() method 
+function reverseArray() {
+    let itCompanies = declareITCompaniesArray(); 
+
+    return [declareITCompaniesArray(),itCompanies.reverse()];
+}
+
+// 17 : Slice out the first 3 companies from the array
+
+function sliceOutLastThree() {
+    let itCompanies = declareITCompaniesArray(); 
+
+    return itCompanies.slice(3)
+}
+sliceOutFirstthree
+// 18 : Slice out the last 3 Companies from the array
+function sliceOutFirstthree() {
+    let itCompanies  = declareITCompaniesArray(); 
+    let arrLength = itCompanies.length
+    let arroffset = arrLength - 3
+
+    return itCompanies.slice(arroffset,arrLength)
+}
+
 
 console.log(
-   printITCompaniesAsSentence()
+   sliceOutLastThree()
 );
